@@ -3,6 +3,11 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
+import authRoutes from './routes/authRoutes.js';
+import courseRoutes from './routes/courseRoutes.js';
+import inquiryRoutes from './routes/inquiryRoutes.js';
+import Course from './models/Course.js';
+import defaultCourses from './seed/defaultCourses.js';
 
 dotenv.config();
 
@@ -25,6 +30,11 @@ const connectDB = async () => {
       : process.env.MONGODB_URI || 'mongodb://localhost:27017/nextgen';
     
     await mongoose.connect(mongoURI);
+    const courseCount = await Course.countDocuments();
+    if (courseCount === 0) {
+      await Course.insertMany(defaultCourses);
+      console.log('✓ Starter courses seeded');
+    }
     console.log('✓ MongoDB connected successfully');
   } catch (error) {
     console.error('✗ MongoDB connection failed:', error.message);
@@ -40,6 +50,10 @@ app.get('/', (req, res) => {
 app.get('/api/health', (req, res) => {
   res.json({ status: 'healthy', timestamp: new Date() });
 });
+
+app.use('/api/auth', authRoutes);
+app.use('/api/courses', courseRoutes);
+app.use('/api/inquiries', inquiryRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
