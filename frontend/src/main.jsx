@@ -236,9 +236,6 @@ function App() {
             </button>
           ))}
         </nav>
-        <button className="nav-cta" type="button" onClick={() => navigate("contact")}>
-          Enquire Now
-        </button>
       </header>
 
       <main>
