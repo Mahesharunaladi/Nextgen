@@ -544,6 +544,13 @@ textarea:focus {
   font-weight: 900;
 }
 
+.error-message {
+  align-self: center;
+  margin: 0;
+  color: var(--coral);
+  font-weight: 900;
+}
+
 .contact-card {
   display: grid;
   gap: 14px;
@@ -580,6 +587,130 @@ footer button {
   font-weight: 900;
 }
 
+.admin-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.admin-panel,
+.admin-login {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  box-shadow: 0 12px 34px rgba(19, 32, 41, 0.07);
+}
+
+.admin-panel {
+  padding: 24px;
+}
+
+.admin-login {
+  display: grid;
+  max-width: 520px;
+  gap: 16px;
+}
+
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.panel-heading h2 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.admin-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.admin-form .button {
+  width: max-content;
+}
+
+.admin-list {
+  display: grid;
+  gap: 12px;
+}
+
+.admin-list-item,
+.inquiry-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  background: var(--soft);
+}
+
+.admin-list-item strong,
+.admin-list-item span,
+.inquiry-item strong,
+.inquiry-item span,
+.inquiry-item small {
+  display: block;
+}
+
+.admin-list-item strong,
+.inquiry-item strong {
+  color: var(--ink);
+}
+
+.admin-list-item span,
+.inquiry-item span,
+.inquiry-item small {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.inquiry-item p {
+  margin: 8px 0;
+}
+
+.row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.ghost-button,
+.danger-button {
+  min-height: 40px;
+  border: 0;
+  border-radius: 8px;
+  padding: 0 14px;
+  font-weight: 900;
+}
+
+.ghost-button {
+  color: var(--blue);
+  background: #edf4ff;
+}
+
+.danger-button {
+  color: #fff;
+  background: var(--coral);
+}
+
 @media (max-width: 1050px) {
   .topbar {
     align-items: flex-start;
@@ -602,7 +733,8 @@ footer button {
   .intro-section,
   .split-section,
   .about-layout,
-  .contact-layout {
+  .contact-layout,
+  .admin-grid {
     grid-template-columns: 1fr;
   }
 
@@ -659,8 +791,25 @@ footer button {
   .testimonial-grid,
   .detail-grid,
   .internship-grid,
-  .lead-form {
+  .lead-form,
+  .admin-form,
+  .admin-list-item,
+  .inquiry-item {
     grid-template-columns: 1fr;
+  }
+
+  .admin-heading,
+  .panel-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .admin-heading .button,
+  .admin-form .button,
+  .row-actions,
+  .ghost-button,
+  .danger-button {
+    width: 100%;
   }
 
   .testimonial p {
