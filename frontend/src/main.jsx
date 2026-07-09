@@ -178,8 +178,9 @@ function App() {
 
   async function handleInquiry(event) {
     event.preventDefault();
+    const formElement = event.currentTarget;
     setInquiryStatus("Submitting...");
-    const form = new FormData(event.currentTarget);
+    const form = new FormData(formElement);
     const payload = {
       name: form.get("name"),
       email: form.get("email"),
@@ -194,7 +195,7 @@ function App() {
         body: JSON.stringify(payload),
       });
       setInquiryStatus("Thank you. Your inquiry has been recorded.");
-      event.currentTarget.reset();
+      formElement.reset();
     } catch (error) {
       setInquiryStatus(error.message);
     }
