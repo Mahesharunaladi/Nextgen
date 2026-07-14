@@ -98,4 +98,4 @@ Required environment variables:
 - `CORS_ORIGIN=https://your-frontend.onrender.com`
 - `VITE_API_BASE_URL=https://your-backend.onrender.com/api`
 
-If you use the included `render.yaml`, Render can read these service settings automatically. Make sure `CORS_ORIGIN` points to your deployed frontend URL and `VITE_API_BASE_URL` points to your deployed backend API URL.
+If you use the included `render.yaml`, Render can read these service settings automatically. Make sure `CORS_ORIGIN` points to your deployed frontend URL and `VITE_API_BASE_URL` points to your deployed backend API URL
