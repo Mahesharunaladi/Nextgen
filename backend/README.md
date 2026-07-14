@@ -72,6 +72,18 @@ backend/
 - `NODE_ENV` - Environment mode (development/production)
 - `CORS_ORIGIN` - CORS allowed origin
 
+## Render deployment
+
+For Render, configure the backend service with:
+
+- Root directory: `backend`
+- Build command: `npm install`
+- Start command: `npm start`
+- Environment variables:
+	- `NODE_ENV=production`
+	- `MONGODB_URI_PROD=<your MongoDB Atlas connection string>`
+	- `CORS_ORIGIN=<your deployed frontend URL>`
+
 ## Technologies
 
 - **Express.js** - Web framework

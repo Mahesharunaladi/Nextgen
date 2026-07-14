@@ -65,7 +65,7 @@ The frontend lives in the `frontend/` folder and is built with Vite + React.
 
 3. Set the API URL in `frontend/.env`:
 	```bash
-	VITE_API_BASE_URL=http://localhost:5055/api
+	VITE_API_BASE_URL=http://localhost:5000/api
 	```
 
 ### Run the frontend
@@ -89,6 +89,7 @@ For production on Render:
 - **Backend start command:** `npm start`
 - **Frontend build command:** `npm install && npm run build`
 - **Frontend publish directory:** `dist`
+- **Frontend service type:** static site (`runtime: static`)
 
 Required environment variables:
 
@@ -97,4 +98,4 @@ Required environment variables:
 - `CORS_ORIGIN=https://your-frontend.onrender.com`
 - `VITE_API_BASE_URL=https://your-backend.onrender.com/api`
 
-If you use the included `render.yaml`, Render can read these service settings automatically.
+If you use the included `render.yaml`, Render can read these service settings automatically. Make sure `CORS_ORIGIN` points to your deployed frontend URL and `VITE_API_BASE_URL` points to your deployed backend API URL.
